@@ -256,6 +256,7 @@ function broadcast(channels::Union{ChannelName,Vector{ChannelName}},
       end
     end
   catch ex
+    Genie.Router.delete_channel!(Symbol(channel))
     @warn ex
   end
 
